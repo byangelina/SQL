@@ -1,0 +1,26 @@
+declare
+  v_numero number(2) := 0;
+  v_version varchar2(100);
+begin
+  select version into v_version from v$instance;
+
+  
+  DBMS_OUTPUT.PUT_LINE('hola infrabase');
+  --Operadores relacionales =,>,>=,<,<=,<>, like(), between
+  -- Operador asignación :=
+  -- Resto -> mod()
+  --Operador lógicos and, or, not
+  -- || -> Concatenación
+  for c in 1..10 loop
+    DBMS_OUTPUT.PUT_LINE('Linea ->' || c);
+    if mod(c,2) = 0 then
+      DBMS_OUTPUT.PUT_LINE(c || ' par');
+    elsif condicion then
+      
+    else
+      DBMS_OUTPUT.PUT_LINE(c || ' impar');
+    end if;  
+  end loop;  
+  DBMS_OUTPUT.PUT_LINE('Versión base datos ->' || v_version);
+end;
+/
