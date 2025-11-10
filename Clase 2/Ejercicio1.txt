@@ -1,0 +1,26 @@
+create or replace trigger pulloa.trg_prueba_nombre_change
+for each row
+declare
+	v_anterior varchar2(100);
+	v_nuevo varcahr2(100);
+begin	
+	v_anterior := :old.nombre;
+	v_nuevo := :new.nombre;
+
+	if v_anterior != v_nuevo then 
+		dbms_output.put_line('____Cambio de nombre___');
+		dbms_output.put_line('Antiguo : ' || v_anterior);
+		dbms_output.put_line('Nuevo : ' || v_nuevo);
+	end if;
+Exception
+	when others then
+		dbms_output.put_line('Error  :' || SQLERRM);
+		raise;
+end;
+/
+
+
+drop trigger pulloa.trg_prueba_nombre_change;
+
+update prueba set nombre = 'holas2' where id = 1;
+		
