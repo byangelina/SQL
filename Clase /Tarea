@@ -1,0 +1,7 @@
+Tarea, crear tabla usuarios al menos con 5 campos, insertar 100 registros,
+crear tabla de auditoria usuarios_audit donde ingresar registro por cada cambio
+en los campos de la tabla usuarios, update, tambien cuando eliminen algun usuario
+dejar registro en auditoria, no auditar insert, solo update y delete.
+
+(tener al menos 2 tablas creadas, con llave foranea y trigger en una de ellas).
+
